@@ -95,12 +95,19 @@ EXCEPTION
 END;
 /
 
+COMMENT ON TABLE TEST_CONTROL IS 'Test Table Creation';
+
+COMMENT ON COLUMN TEST_CONTROL.test_table_id IS 'Surrogate primary key for the test control record.';
+COMMENT ON COLUMN TEST_CONTROL.date_partition_key IS 'Partition key representing the date dimension (YYDDD format).';
+COMMENT ON COLUMN TEST_CONTROL.barcode_partition_key IS 'Subpartition key representing the barcode partition bucket.';
+COMMENT ON COLUMN TEST_CONTROL.create_datetime IS 'Date and time the record was created.';
+
 DECLARE
    lr_tm   table_metadata%ROWTYPE;
 BEGIN
 
    lr_tm.table_name       := 'TEST_CONTROL';
-   lr_tm.short_table_name := 'testctrl';
+   lr_tm.short_table_name := 'TESTCTRL';
    lr_tm.create_datetime  := SYSDATE;
    INSERT INTO table_metadata VALUES lr_tm;
 
