@@ -14,7 +14,7 @@
 
 DECLARE
    lr_dtc       dmcr_track_control%ROWTYPE;
-   lv_dmcr_id   dmcr_track_control.dmcr_id%TYPE := '21402';
+   lv_dmcr_id   dmcr_track_control.dmcr_id%TYPE := '<DMCR_ID>';
 BEGIN
 
    lr_dtc.dmcr_id          := lv_dmcr_id;
